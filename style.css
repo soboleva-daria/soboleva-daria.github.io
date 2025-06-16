@@ -103,49 +103,73 @@ header {
     margin-bottom: 40px;
 }
 
-.talk {
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #eaecef;
+.talks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.talk:last-child {
-    border-bottom: none;
+.talk-card {
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.talk h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
+.talk-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: #0366d6;
 }
 
-.talk h3 a {
+.talk-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.talk-link:hover {
+    text-decoration: none;
+}
+
+.talk-image {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.talk-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.talk-card:hover .talk-image img {
+    transform: scale(1.03);
+}
+
+.talk-info {
+    padding: 12px;
+}
+
+.talk-info h3 {
+    font-size: 0.9em;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
     color: #333;
-}
-
-.talk h3 a:hover {
-    color: #0366d6;
+    font-weight: 600;
 }
 
 .talk-venue {
     color: #666;
     font-style: italic;
-    margin-bottom: 10px;
-    font-size: 0.95em;
-}
-
-.talk p {
-    color: #555;
-    line-height: 1.5;
-}
-
-.talk-links {
-    margin-top: 12px;
-}
-
-.talk-links a {
-    margin-right: 15px;
-    font-size: 0.9em;
-    color: #0366d6;
+    margin: 0;
+    font-size: 0.8em;
 }
 
 /* Footer */
@@ -178,8 +202,24 @@ footer {
         font-size: 1.3em;
     }
     
-    .talk-links a {
-        display: inline-block;
-        margin-bottom: 5px;
+    .talks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .talk-image {
+        height: 100px;
+    }
+    
+    .talk-info {
+        padding: 10px;
+    }
+    
+    .talk-info h3 {
+        font-size: 0.85em;
+    }
+    
+    .talk-venue {
+        font-size: 0.75em;
     }
 }
