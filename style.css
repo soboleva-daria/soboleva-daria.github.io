@@ -137,7 +137,7 @@ header {
 
 .talk-image {
     width: 100%;
-    height: 120px;
+    height: 140px;
     position: relative;
     overflow: hidden;
 }
@@ -149,6 +149,7 @@ header {
     object-position: center;
     transition: transform 0.3s ease;
     background-color: #f8f9fa;
+    padding: 8px;
 }
 
 .talk-card:hover .talk-image img {
