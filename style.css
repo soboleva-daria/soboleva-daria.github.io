@@ -269,3 +269,13 @@ footer {
         font-size: 0.75em;
     }
 }
+/* Keep single-card grids from stretching to full width on desktop */
+.talks-grid.single-card {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media (max-width: 600px) {
+    .talks-grid.single-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
